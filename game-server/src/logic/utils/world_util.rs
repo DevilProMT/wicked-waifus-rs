@@ -205,11 +205,12 @@ fn build_player_info_list(world: &World) -> Vec<ScenePlayerInformation> {
                     group_type: sp.group_type,
                     living_status: LivingStatus::Alive.into(),
                     cur_role: cur_role_id,
-                    is_retain: true,
                     fight_role_infos: active_characters
                         .map(|(id, _, _, conf)| FightRoleInfo {
                             entity_id: id.into(),
                             role_id: conf.config_id,
+                            on_stage_without_control:false,
+                            role_skin_id:81010000+conf.config_id,
                         })
                         .collect(),
                     ..Default::default()

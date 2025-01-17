@@ -1,0 +1,63 @@
+{
+    "default": {
+        "CdnUrl": [
+            {
+                "url": "https://cdn-huoshan-cn-mc.aki-game.com/prod/client/",
+                "weight": "396"
+            },
+            {
+                "url": "https://cdn-qcloud-cn-mc.aki-game.com/prod/client/",
+                "weight": "0"
+            },
+            {
+                "url": "https://cdn-aliyun-cn-mc.aki-game.com/prod/client/",
+                "weight": "2287"
+            }
+        ],
+        "SecondaryUrl": [],
+        "PriceRatio": 1,
+        "SpeedRatio": 1,
+        "GachaUrl": {
+            "GachaRecord": "https://aki-gm-resources-beta.aki-game2.com",
+            "GachaPoolDetail": "https://aki-gm-resources-beta.aki-game2.com"
+        },
+        "LogReport": {
+            "name": "pioneer-upload-log-1319073642",
+            "region": "ap-shanghai"
+        },
+        "PackageUpdateDescUrl": {
+            "MainUrl": "https://aki-gm-resources-back.aki-game.com/force_update/UpdateDesc.html",
+            "SubUrl": "https://aki-gm-resources-back-qiniu.aki-game.com/force_update/UpdateDesc.html"
+        },
+        "PackageUpdateUrl": {
+            "MainUrl": "https://aki-gm-resources-back.aki-game.com/force_update/UpdateJs.html",
+            "SubUrl": "https://aki-gm-resources-back-qiniu.aki-game.com/force_update/UpdateJs.html"
+        },
+        "TDCfg": {
+            "URL": "http://1.1.1.1",
+            "AppID": "69696969696969696969696969696969"
+        },
+        "GmOpen": true,
+        "IosAuditFirstDownloadTip": false,
+        "NoticeUrl": "https://aki-gm-resources-back-beta.aki-game2.com",
+        "MixUri": "bpIWdherKqwfYUO5gIE5fnMfOL4PmBty",
+        "ResUri": "bpIWdherKqwfYUO5gIE5fnMfOL4PmBty",
+        "LoginServers": [
+            {
+                "PingUrl": "127.0.0.1",
+                "Region": "CN",
+                "id": "1",
+                "ip": "http://127.0.0.1:5501",
+                "name": "Jinhsi's Server"
+            }
+        ],
+        "PrivateServers": {
+            "enable": false,
+            "serverUrl": ""
+        }
+    },
+    "p1": {
+        "IosAuditFirstDownloadTip": false
+    },
+    "ModifyTime": 1736417887
+}

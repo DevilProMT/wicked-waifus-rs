@@ -4,7 +4,7 @@ use shorekeeper_protocol::{
     EntityRemoveNotify, FightFormationNotifyInfo, FightRoleInfo, FightRoleInfos, FormationRoleInfo,
     GroupFormation, ItemPkgOpenNotify, LivingStatus, PbGetRoleListNotify, PlayerBasicData,
     PlayerFightFormations, PlayerRoleData, PlayerSaveData, ProtocolUnit, UpdateFormationNotify,
-    UpdateGroupFormationNotify,
+    UpdateGroupFormationNotify, RoleInfo
 };
 use std::cell::RefCell;
 use std::collections::HashMap;
@@ -97,7 +97,7 @@ impl Player {
             .filter(|role_info| role_info.role_type == 1)
             .map(|role_info| role_info.id)
             .collect();
-        let formation = vec![1603, 1504, 1505];
+        let formation = vec![1506, 1206, 1505];
 
         required_role_ids.iter().for_each(|&role_id| {
             if !self.role_list.keys().any(|&k| k == role_id) {
@@ -228,10 +228,11 @@ impl Player {
                         .map(|&role_id| FightRoleInfo {
                             role_id,
                             entity_id: world.get_entity_id(role_id),
+                            on_stage_without_control:false,
+                            role_skin_id:81010000+role_id,
                         })
                         .collect(),
                     cur_role: cur_formation.cur_role,
-                    is_retain: false,
                     living_status: LivingStatus::Alive.into(),
                     is_fixed_location: false,
                 }],
@@ -270,6 +271,7 @@ impl Player {
                                     max_hp: 0,
                                     cur_hp: 0,
                                     level,
+                                    role_skin_id: 81010000 + role_id,
                                 }
                             })
                             .collect(),
@@ -344,12 +346,15 @@ impl Player {
     }
 
     pub fn build_role_list_notify(&self) -> PbGetRoleListNotify {
+        // TODO
         PbGetRoleListNotify {
-            role_list: self
-                .role_list
-                .iter()
-                .map(|(_, role)| role.to_protobuf())
-                .collect(),
+            role_list: vec![
+                RoleInfo { 
+                    role_id: 1603,
+                    level: 1,
+                    ..Default::default()
+                }
+            ]
         }
     }
 

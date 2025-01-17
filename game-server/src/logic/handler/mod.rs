@@ -6,6 +6,9 @@ mod misc;
 mod role;
 mod scene;
 mod skill;
+mod formation;
+mod inventory;
+mod friend;
 
 pub use combat::*;
 pub use entity::*;
@@ -15,6 +18,9 @@ pub use misc::*;
 pub use role::*;
 pub use scene::*;
 pub use skill::*;
+pub use formation::*;
+pub use inventory::*;
+pub use friend::*;
 
 use shorekeeper_protocol::message::Message;
 
@@ -97,6 +103,14 @@ handle_request! {
     RoleFavorList;
     FormationAttr;
     UpdateFormation;
+    RoleVisionRecommendData;
+    RoleVisionRecommendAttr;
+    PlayerHeadData;
+    UnlockRoleSkinList;
+    PlayerMotion;
+
+    // Formation
+    GetFormationData;
 
     // Entity
     EntityActive;
@@ -115,6 +129,40 @@ handle_request! {
     InputSettingUpdate;
     LanguageSettingUpdate;
     ServerPlayStationPlayOnlyState;
+    AccessPathTimeServerConfig;
+    EnergySync;
+    GetDetectionLabelInfo;
+    TutorialInfo;
+    MonthCard;
+    InfluenceInfo;
+    AchievementInfo;
+    ExchangeReward;
+    Liveness;
+    WebSign;
+    PhotoMemory;
+    WeaponSkin;
+    VisionEquipGroupInfo;
+    UpdatePlayStationBlockAccount;
+    AdventureManual;
+    LordGymInfo;
+    MapTraceInfo;
+    Tower;
+    ExploreProgress;
+    ReportData;
+    UpdateVoxelEnv;
+    SimpleTrackReportAsync;
+    TowerSeasonUpdate;
+    ForgeInfo;
+
+    // Friend
+    FriendAll;
+
+    // Inventory
+    NormalItem;
+    WeaponItem;
+    PhantomItem;
+    ValidTimeItem;
+    ItemExchangeInfo;
 
     // Scene
     SceneTrace;

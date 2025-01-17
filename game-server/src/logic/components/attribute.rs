@@ -54,8 +54,8 @@ impl Attribute {
                 .iter()
                 .map(|(ty, (base, incr))| AttrData {
                     attribute_type: (*ty).into(),
-                    base_value: *base,
-                    increment: *incr,
+                    current_value: *base,
+                    value_increment: *incr,
                 })
                 .collect(),
             hardness_mode_id: 0,

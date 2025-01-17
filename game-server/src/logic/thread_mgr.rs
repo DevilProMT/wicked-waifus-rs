@@ -2,7 +2,7 @@ use common::time_util;
 use shorekeeper_protocol::PlayerSaveData;
 use shorekeeper_protocol::{
     message::Message, AfterJoinSceneNotify, EnterGameResponse, JoinSceneNotify, JsPatchNotify,
-    TransitionOptionPb,
+    TransitionOptionPb, SilenceNpcNotify, PushDataCompleteNotify
 };
 use std::collections::hash_map::Entry::Vacant;
 use std::{
@@ -175,6 +175,10 @@ fn handle_logic_input(state: &mut LogicState, input: LogicInput) {
             world_util::add_player_entities(&player);
             let scene_info = world_util::build_scene_information(&player);
 
+            player.notify(PushDataCompleteNotify::default());
+
+            player.notify(SilenceNpcNotify::default());
+
             player.notify(JoinSceneNotify {
                 scene_info: Some(scene_info),
                 max_entity_id: i64::MAX,
@@ -204,8 +208,9 @@ fn handle_logic_input(state: &mut LogicState, input: LogicInput) {
             );
             player.quadrant_id = quadrant_id;
 
-            let entities = map.get_initial_entities(quadrant_id);
-            world_util::add_entities(&player, &entities);
+            // TODO
+            // let entities = map.get_initial_entities(quadrant_id);
+            // world_util::add_entities(&player, &entities);
 
             drop(player);
 

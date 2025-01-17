@@ -4,7 +4,9 @@ use shorekeeper_protocol::{
     ClientCurrentRoleReportRequest, ClientCurrentRoleReportResponse, ERemoveEntityType, ErrorCode,
     FormationAttrRequest, FormationAttrResponse, RoleFavorListRequest, RoleFavorListResponse,
     RoleShowListUpdateRequest, RoleShowListUpdateResponse, UpdateFormationRequest,
-    UpdateFormationResponse,
+    UpdateFormationResponse, RoleVisionRecommendDataRequest , RoleVisionRecommendDataResponse,
+    RoleVisionRecommendAttrRequest, RoleVisionRecommendAttrResponse, PlayerHeadDataRequest, PlayerHeadDataResponse,
+    UnlockRoleSkinListRequest, UnlockRoleSkinListResponse, PlayerMotionRequest, PlayerMotionResponse,
 };
 use std::collections::HashSet;
 
@@ -138,4 +140,46 @@ pub fn on_update_formation_request(
     player.notify(player.build_update_formation_notify());
 
     response.error_code = ErrorCode::Success.into();
+}
+
+pub fn on_role_vision_recommend_data_request(
+    _: &Player,
+    _: RoleVisionRecommendDataRequest,
+    response: &mut RoleVisionRecommendDataResponse,
+) {
+    response.error_code = ErrorCode::Success.into();
+    response.vision_fetter_recommend_info = vec![];
+}
+
+pub fn on_role_vision_recommend_attr_request(
+    _: &Player,
+    _: RoleVisionRecommendAttrRequest,
+    response: &mut RoleVisionRecommendAttrResponse,
+) {
+    response.error_code = ErrorCode::Success.into();
+    response.vision_attr_recommend_info = vec![];
+}
+
+pub fn on_player_head_data_request(
+    _: &Player,
+    _: PlayerHeadDataRequest,
+    response: &mut PlayerHeadDataResponse,
+) {
+    response.pi = vec![];
+}
+
+pub fn on_unlock_role_skin_list_request(
+    _: &Player,
+    _: UnlockRoleSkinListRequest,
+    response: &mut UnlockRoleSkinListResponse,
+) {
+    response.role_skin_list = vec![];
+}
+
+pub fn on_player_motion_request(
+    _: &Player,
+    _: PlayerMotionRequest,
+    response: &mut PlayerMotionResponse,
+) {
+    response.error_id = 0;
 }

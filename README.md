@@ -1,6 +1,9 @@
 # Shorekeeper
 
-![Screenshot](https://git.xeondev.com/Shorekeeper/Shorekeeper/raw/branch/master/screenshot.png)
+![Screenshot](https://github.com/DevilProMT/wicked-waifus-rs/raw/master/screenshot.png)
+
+## NOTE
+I am not the original author of this project. It is a fork of https://git.xeondev.com/wickedwaifus/wicked-waifus-rs.
 
 ## About
 **Shorekeeper is an open-source Wuthering Waves server emulator written in Rust**. The goal of this project is to ensure a clean, easy-to-understand code environment. Shorekeeper uses **tokio** for asynchronous networking operations, **axum** as http framework and **ZeroMQ** for communication between servers. It also implements **performant and extensible ECS** for emulation of the game world.
@@ -15,8 +18,8 @@
 ##### a) building from sources
 
 ```sh
-git clone https://git.xeondev.com/Shorekeeper/Shorekeeper.git
-cd Shorekeeper
+git clone https://github.com/DevilProMT/wicked-waifus-rs.git
+cd wicked-waifus-rs
 cargo run --bin config-server
 cargo run --bin hotpatch-server
 cargo run --bin login-server
@@ -65,10 +68,14 @@ db_name = "shorekeeper"
 The data files: Logic JSON collections (`assets/logic/json`) and config/hotpatch indexes (`assets/config`, `assets/hotpatch`) are included in this repository. Keep in mind that you need to have the `assets` subdirectory in current working directory.
 
 #### Connecting
-You have to download client of Wuthering Waves Beta 1.3, apply the [shorekeeper-patch](https://git.xeondev.com/xeon/shorekeeper-patch/releases) and add necessary `.pak` files, which you can get here: [shorekeeper-pak](https://git.xeondev.com/Shorekeeper/shorekeeper-pak)
+You have to download client of Wuthering Waves Beta 2.1, apply the [wicked-waifus-win-patch](https://git.xeondev.com/wickedwaifus/wicked-waifus-win-patch) and add necessary `.pak` files, which you can get here: [wicked-waifus-pak](https://git.xeondev.com/wickedwaifus/wicked-waifus-pak)
 
 ### Troubleshooting
 [Visit our discord](https://discord.gg/reversedrooms) if you have any questions/issues
 
 ### Support
 If you want to support this project, feel free to [send a tip via boosty](https://boosty.to/xeondev/donate)
+
+### Credits
+- xeon
+- xavo95

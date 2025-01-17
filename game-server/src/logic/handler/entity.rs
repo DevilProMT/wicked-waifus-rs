@@ -76,7 +76,7 @@ pub fn on_entity_position_request(
     tracing::debug!(
         "EntityPositionRequest: config with id {} for map {} position requested",
         request.config_id,
-        request.map_id
+        request.dungeon_instance_id
     );
 }
 
